@@ -1,12 +1,15 @@
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+import tw from 'twrnc';
+import noodlesImg from '../assets/noodles.jpg';
+import Txt from './Txt';
 
 const PopularRecipeCard = () => {
   return (
-    <View>
-      {/* <Image /> */}
+    <View style={tw`mt-8`}>
+      <Image source={noodlesImg} alt="noodles" />
       <View>
-        <Text>5 Bean Chili Stew</Text>
-        <Text>Recipe by Mario</Text>
+        <Txt>5 Bean Chili Stew</Txt>
+        <Txt>Recipe by Mario</Txt>
       </View>
     </View>
   );

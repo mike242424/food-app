@@ -1,22 +1,27 @@
-import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
+import tw from 'twrnc';
+import Txt from './Txt';
 
 const Main = () => {
   return (
-    <>
-      <View>
+    <View>
+      <View style={tw`flex-row`}>
         <TouchableOpacity>
-          <Text>Log in</Text>
+          <Txt>Log in</Txt>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text>Sign up</Text>
+          <Txt>Sign up</Txt>
         </TouchableOpacity>
       </View>
       <View>
-        <Text>Recipes</Text>
-        <Text>For Everyone</Text>
+        <Txt
+          additionalStyles={tw`text-gray-700 text-6xl font-semibold mt-6 mb-3`}
+        >
+          Recipes
+        </Txt>
+        <Txt additionalStyles={tw`text-2xl font-semibold`}>For Everyone</Txt>
       </View>
-    </>
+    </View>
   );
 };
 

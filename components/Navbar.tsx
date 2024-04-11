@@ -1,8 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import tw from 'twrnc';
+import Txt from './Txt';
 
 type RootStackParamList = {
   Home: undefined;
@@ -17,19 +18,19 @@ const Navbar = () => {
   const nav = useNavigation<ProfileScreenNavigationProp>();
 
   return (
-    <View style={tw`flex-row bg-red-300 justify-between p-5`}>
-      <View>
-        <Text style={tw`text-4xl text-white font-bold`}>Food App</Text>
+    <View>
+      <View style={tw`p-4 border-b border-gray-100`}>
+        <Txt additionalStyles={tw`font-bold uppercase`}>Food App</Txt>
       </View>
-      <View style={tw`flex-row px-3 items-center`}>
+      <View>
         <TouchableOpacity onPress={() => nav.navigate('Home')}>
-          <Text style={tw`text-white font-bold`}>Home</Text>
+          <Txt additionalStyles={tw`text-gray-700 font-bold`}>Home</Txt>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => nav.navigate('About')}>
-          <Text style={tw`ml-2 text-white font-bold`}>About</Text>
+          <Txt>About</Txt>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => nav.navigate('Contact')}>
-          <Text style={tw`ml-2 text-white font-bold`}>Contact</Text>
+          <Txt>Contact</Txt>
         </TouchableOpacity>
       </View>
     </View>

@@ -2,19 +2,23 @@ import Navbar from '../components/Navbar';
 import Main from '../components/Main';
 import LatestRecipesList from '../components/LatestRecipesList';
 import PopularRecipeList from '../components/PopularRecipeList';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
+import tw from 'twrnc';
+import Txt from '../components/Txt';
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Main />
-      <LatestRecipesList />
-      <PopularRecipeList />
-      <View>
-        <TouchableOpacity>
-          <Text>Load more recipes</Text>
-        </TouchableOpacity>
+      <View style={tw`px-4 py-6`}>
+        <Main />
+        <LatestRecipesList />
+        <PopularRecipeList />
+        <View>
+          <TouchableOpacity>
+            <Txt>Load more recipes</Txt>
+          </TouchableOpacity>
+        </View>
       </View>
     </>
   );
